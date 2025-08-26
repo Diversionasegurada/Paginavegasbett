@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VegasBett — Retirar saldo</title>
+  <link rel="stylesheet" href="/assets/styles.css"/>
+  <script defer src="/assets/config.js"></script>
+  <script defer src="/assets/app.js"></script>
+  
+  <script>(function(){const C=window.VEGASBETT_CONFIG||{};if(C.NO_INDEX){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m)}if(C.SHARE_PREVIEW!==false){var t=document.createElement('meta');t.setAttribute('property','og:title');t.content=(C.MARCA||'VegasBett')+' – Cargas y Retiros';document.head.appendChild(t);var d=document.createElement('meta');d.setAttribute('property','og:description');d.content='Atención por WhatsApp. Cargas y retiros.';document.head.appendChild(d);var i=document.createElement('meta');i.setAttribute('property','og:image');i.content=(C.OG_IMAGE||'/assets/og.jpg');document.head.appendChild(i)}var tc=document.createElement('meta');tc.name='theme-color';tc.content='#5b2d82';document.head.appendChild(tc)})();</script>
+
+  
+  <script>(function(){var C=window.VEGASBETT_CONFIG||{};if(!C.TRACKING_ENABLED)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','24100361799629508');fbq('track','PageView');})();</script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="brand">
+          <span>🎰 VegasBett</span>
+          <span class="badge">Retiros</span>
+        </div>
+        <a class="badge-pill" href="/index.html">← Volver</a>
+      </div>
+
+      <h1>Solicitá tu retiro</h1>
+      <p class="sub">Un retiro cada 24 horas. Completá tus datos y te confirmamos por WhatsApp.</p>
+
+      <form id="formRetirar" class="form">
+        <div><label for="nombreR">Nombre o usuario</label><input id="nombreR" type="text" placeholder="Ej: Ricardo / ricardo23" required/></div>
+        <div><label for="montoR">Monto a retirar (ARS)</label><input id="montoR" type="number" inputmode="numeric" placeholder="Ej: 20000" required min="1"/></div>
+        <div class="note">Recordá: un retiro <strong>cada 24 horas</strong>.</div>
+        <div class="cta-row">
+          <button type="submit" class="btn ok">Enviar por WhatsApp</button>
+          <a href="/index.html" class="btn secondary">Cancelar</a>
+        </div>
+      </form>
+
+      <footer class="center">
+        Uso interno — no indexado. © <span id="year"></span> VegasBett
+      </footer>
+    </div>
+  </div>
+  <div id="toast" class="toast">Copiado</div>
+</body>
+</html>

@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VegasBett — Centro de Atención</title>
-  <link rel="stylesheet" href="/assets/styles.css"/>
-  <script defer src="/assets/config.js"></script>
-  <script defer src="/assets/app.js"></script>
-  
-  <script>(function(){const C=window.VEGASBETT_CONFIG||{};if(C.NO_INDEX){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m)}if(C.SHARE_PREVIEW!==false){var t=document.createElement('meta');t.setAttribute('property','og:title');t.content=(C.MARCA||'VegasBett')+' – Cargas y Retiros';document.head.appendChild(t);var d=document.createElement('meta');d.setAttribute('property','og:description');d.content='Atención por WhatsApp. Cargas y retiros.';document.head.appendChild(d);var i=document.createElement('meta');i.setAttribute('property','og:image');i.content=(C.OG_IMAGE||'/assets/og.jpg');document.head.appendChild(i)}var tc=document.createElement('meta');tc.name='theme-color';tc.content='#5b2d82';document.head.appendChild(tc)})();</script>
 
-  
+  <!-- RUTAS RELATIVAS -->
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <script defer src="assets/config.js"></script>
+  <script defer src="assets/app.js"></script>
+
+  <!-- head dinámico + (pixel cuando lo habilites en config.js) -->
+  <script>(function(){const C=window.VEGASBETT_CONFIG||{};if(C.NO_INDEX){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m)}if(C.SHARE_PREVIEW!==false){var t=document.createElement('meta');t.setAttribute('property','og:title');t.content=(C.MARCA||'VegasBett')+' – Cargas y Retiros';document.head.appendChild(t);var d=document.createElement('meta');d.setAttribute('property','og:description');d.content='Atención por WhatsApp. Cargas y retiros.';document.head.appendChild(d);var i=document.createElement('meta');i.setAttribute('property','og:image');i.content=(C.OG_IMAGE||'assets/og.jpg');document.head.appendChild(i)}var tc=document.createElement('meta');tc.name='theme-color';tc.content='#5b2d82';document.head.appendChild(tc)})();</script>
   <script>(function(){var C=window.VEGASBETT_CONFIG||{};if(!C.TRACKING_ENABLED)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','24100361799629508');fbq('track','PageView');})();</script>
-
 </head>
 <body>
   <div class="container">
@@ -23,7 +23,6 @@
         <div class="brand">
           <span>🎰 VegasBett</span>
           <span class="badge">Atención 24/7</span>
-          
         </div>
         <span class="badge-pill badge-admin" id="adminToggle" title="Panel rápido">Admin</span>
       </div>
@@ -34,8 +33,8 @@
       <div class="grid">
         <button class="btn ok" id="btnPrincipal">Número principal (WhatsApp)</button>
         <button class="btn secondary" id="btnRespaldo">Número respaldo (WhatsApp)</button>
-        <a class="btn warn" href="/cargar.html">Quiero Cargar</a>
-        <a class="btn" href="/retirar.html">Quiero Retirar</a>
+        <a class="btn warn" href="cargar.html">Quiero Cargar</a>
+        <a class="btn" href="retirar.html">Quiero Retirar</a>
       </div>
 
       <div id="adminPanel" class="admin-panel hidden">

@@ -9,7 +9,7 @@
   <script defer src="assets/config.js"></script>
   <script defer src="assets/app.js"></script>
 
-  <script>(function(){const C=window.VEGASBETT_CONFIG||{};if(C.NO_INDEX){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m)}if(C.SHARE_PREVIEW!==false){var t=document.createElement('meta');t.setAttribute('property','og:title');t.content=(C.MARCA||'VegasBett')+' – Retirar';document.head.appendChild(t);var d=document.createElement('meta');d.setAttribute('property','og:description');d.content='Solicitá tu retiro (1 cada 24 hs).';document.head.appendChild(d);var i=document.createElement('meta');i.setAttribute('property','og:image');i.content=(C.OG_IMAGE||'assets/og.jpg');document.head.appendChild(i)}var tc=document.createElement('meta');tc.name='theme-color';tc.content='#5b2d82';document.head.appendChild(tc)})();</script>
+  <script>(function(){const C=window.VEGASBETT_CONFIG||{};if(C.NO_INDEX){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m)}if(C.SHARE_PREVIEW!==false){var t=document.createElement('meta');t.setAttribute('property','og:title');t.content=(C.MARCA||'VegasBett')+' – Retirar';document.head.appendChild(t);var d=document.createElement('meta');d.setAttribute('property','og:description');d.content='Solicitá tu retiro (1 cada 24 hs).';document.head.appendChild(d);var i=document.createElement('meta');i.setAttribute('property','og:image');i.content=(C.OG_IMAGE||'assets/portada_paginaweb.png');document.head.appendChild(i)}var tc=document.createElement('meta');tc.name='theme-color';tc.content='#5b2d82';document.head.appendChild(tc)})();</script>
 </head>
 <body>
   <div class="container">
@@ -23,12 +23,49 @@
       </div>
 
       <h1>Solicitá tu retiro</h1>
-      <p class="sub">Un retiro cada 24 horas. Completá tus datos y te confirmamos por WhatsApp.</p>
 
-      <form id="formRetirar" class="form">
-        <div><label for="nombreR">Nombre o usuario</label><input id="nombreR" type="text" placeholder="Ej: Ricardo / ricardo23" required/></div>
-        <div><label for="montoR">Monto a retirar (ARS)</label><input id="montoR" type="number" inputmode="numeric" placeholder="Ej: 20000" required min="1"/></div>
-        <div class="note">Recordá: un retiro <strong>cada 24 horas</strong>.</div>
+      <!-- CARTEL -->
+      <div class="note" style="font-size:15px; line-height:1.45">
+        🎉 <strong>¡FELICITACIONES POR TU PREMIO!</strong> 🥳<br/>
+        Para procesar tu retiro, por favor completá los siguientes datos:
+        <ul class="clean">
+          <li>👤 <em>Usuario</em></li>
+          <li>👑 <em>Titular de la cuenta</em></li>
+          <li>🏦 <em>CBU o Alias</em></li>
+          <li>💵 <em>Monto a retirar</em></li>
+        </ul>
+        <hr class="soft"/>
+        ⚠️ <strong>IMPORTANTE</strong><br/>
+        Procesamos los retiros por orden de <em>llegada</em>.<br/>
+        Si escribís reiteradamente, el mensaje sube y se demora el proceso. Apenas finalicemos, te enviamos el comprobante ✅
+        <hr class="soft"/>
+        ⏰ <strong>RECORDÁ:</strong><br/>
+        📆 Solo se puede realizar 1 retiro cada 24 hs.<br/>
+        💸 Monto máximo por retiro: $250.000
+        <hr class="soft"/>
+        🙌 Desde VegasBett buscamos darte el mejor servicio posible.<br/>
+        💛 Si querés ayudarnos con una propina, ¡te lo vamos a agradecer mucho! 🙏🏻<br/>
+        🤝 Para colaborar, solo pedinos el CBU.
+      </div>
+
+      <!-- FORMULARIO -->
+      <form id="formRetirar" class="form" style="margin-top:14px">
+        <div>
+          <label for="usuarioR">Usuario</label>
+          <input id="usuarioR" type="text" placeholder="Ej: ricardo23" required/>
+        </div>
+        <div>
+          <label for="titularR">Titular de la cuenta</label>
+          <input id="titularR" type="text" placeholder="Ej: Priscila Correa" required/>
+        </div>
+        <div>
+          <label for="cbuAliasR">CBU o Alias</label>
+          <input id="cbuAliasR" type="text" placeholder="Ej: 000000... o Vegass.bet" required/>
+        </div>
+        <div>
+          <label for="montoR">Monto a retirar (ARS)</label>
+          <input id="montoR" type="number" inputmode="numeric" placeholder="Ej: 20000" required min="1"/>
+        </div>
         <div class="cta-row">
           <button type="submit" class="btn ok">Enviar por WhatsApp</button>
           <a href="index.html" class="btn secondary">Cancelar</a>

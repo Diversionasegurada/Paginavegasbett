@@ -6,7 +6,8 @@ window.VEGASBETT_CONFIG = {
   ALIAS: "Vegass.bet",
   TITULAR: "Priscila Correa",
   MARCA: "VegasBett",
-    OG_IMAGE: "/assets/portada_paginaweb.jpg",
+    OG_IMAGE: "assets/portada_paginaweb.png",  // ← PNG y ruta RELATIVA
+    SHARE_PREVIEW: true,                       // ← habilita las meta OG
 
   NO_INDEX: true,
   TRACKING_ENABLED: false,

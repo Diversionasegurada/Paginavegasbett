@@ -97,18 +97,67 @@
     }
   }
 
-  // Retirar
-  if ($('#formRetirar')){
-    $('#formRetirar').addEventListener('submit', e=>{
-      e.preventDefault();
-      const nombre=$('#nombreR').value.trim();
-      const monto=$('#montoR').value.trim();
-      if(!nombre || !monto){ alert('Completá nombre/usuario y monto.'); return; }
-      const text=`Hola, soy *${nombre}*.\nQuiero *RETIRAR* ${moneyFormat(monto)}.\nEntiendo que hay 1 retiro cada 24 hs.`;
-      if (typeof fbq==='function'){ fbq('track','Contact',{flow:'retirar'}); }
-      location.href=waUrl(CFG.NUMERO_PRINCIPAL, text);
-    });
-  }
+  // RETIRAR
+if (document.querySelector('#formRetirar')) {
+  const $ = (s,r=document)=>r.querySelector(s);
+  const CFG = window.VEGASBETT_CONFIG || {};
+
+  // Prefills útiles
+  const titularInput = $('#titularR');
+  const cbuAliasInput = $('#cbuAliasR');
+  if (titularInput && CFG.TITULAR) titularInput.value = CFG.TITULAR;
+  if (cbuAliasInput) cbuAliasInput.value = (CFG.ALIAS || CFG.CBU || '');
+
+  $('#formRetirar').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const usuario  = $('#usuarioR').value.trim();
+    const titular  = $('#titularR').value.trim();
+    const cbuAlias = $('#cbuAliasR').value.trim();
+    const monto    = $('#montoR').value.trim();
+
+    if (!usuario || !titular || !cbuAlias || !monto) {
+      alert('Completá todos los campos.');
+      return;
+    }
+
+    const moneyFormat = (n) => {
+      try { const v = Number(n); if (isNaN(v)) return n;
+        return v.toLocaleString('es-AR', { style:'currency', currency:'ARS', maximumFractionDigits:0 });
+      } catch(e){ return n; }
+    };
+
+    const text = `🎉 *¡FELICITACIONES POR TU PREMIO!* 🥳
+Para procesar tu retiro, por favor completá los siguientes datos:
+
+👤 _Usuario:_ ${usuario}
+👑 _Titular de la cuenta:_ ${titular}
+🏦 _CBU o Alias:_ ${cbuAlias}
+💵 _Monto a retirar:_ ${moneyFormat(monto)}
+
+—
+⚠️ *IMPORTANTE*
+Procesamos los retiros por orden de _llegada._
+Si escribís reiteradamente, el mensaje sube y se demora el proceso. Apenas finalicemos, te enviamos el comprobante ✅
+
+—
+⏰ *RECORDÁ:*
+📆 Solo se puede realizar 1 retiro cada 24 hs.
+💸 Monto máximo por retiro: $250.000
+
+—
+🙌 Desde VegasBett buscamos darte el mejor servicio posible
+💛 Si querés ayudarnos con una propina, ¡te lo vamos a agradecer mucho! 🙏🏻
+
+🤝 Para colaborar, solo pedinos el CBU`;
+
+    const msg = encodeURIComponent(text);
+    const number = CFG.NUMERO_PRINCIPAL;
+    const url = number ? `https://wa.me/${number}?text=${msg}` : `https://wa.me/?text=${msg}`;
+    if (typeof fbq === 'function') { fbq('track','Contact',{flow:'retirar'}); }
+    window.location.href = url;
+  });
+}
 
   // Panel admin
   const adminToggle=$('#adminToggle');
